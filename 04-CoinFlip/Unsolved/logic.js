@@ -2,6 +2,8 @@ var headsCount = 0;
     var tailsCount = 0;
     var wins = 0;
     var losses = 0;
+    let randHead = 0;
+    let randTail = 0;
     let gameCount = 0;
 
     function flipThatCoin(result) {
@@ -18,6 +20,7 @@ var headsCount = 0;
         $("#coin-image").html("<img src='http://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg'>");
         //  Replace its html with an img tag containing this image:
         //  http://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg
+        randHead++;
       } else {
         // Else:
 
@@ -25,14 +28,13 @@ var headsCount = 0;
         //  Replace its html with an img tag containing this image:
         //  http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg
         $("#coin-image").html("<img src='http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg'>");
+        randTail++;
       }
       //  STEP THREE:
       if (result === randNum) {
         // If result is equal to randomNumber, do the following:
         const winner = ["Wow you are such a freaking winner!", "You totally won your ass off!", "Wintastic!", "Winford Brimly!"];
         let winning = Math.floor(Math.random() * Math.floor(4));
-        console.log(winning);
-        console.log(winner[winning]);
         //  Increment wins by one.
         wins++;
         //  Find the div with an id of win-lose. Update it with an h2 of "Winner!"
@@ -49,6 +51,11 @@ var headsCount = 0;
         //  Find the div with an id of losses. Update it with the value of the losses variable.
         $("#losses").html(losses);
       }
+      gameCount++;
+      let headPercent = (randHead/gameCount) * 100 ;
+      let tailsPercent = randTail/gameCount * 100;
+      $("#heads-percent").html(`${headPercent.toFixed(1)}%`);
+      $("#tails-percent").html(`${tailsPercent.toFixed(1)}%`);
     }
 
     // This on click function has been completed for us.
