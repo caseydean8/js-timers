@@ -45,7 +45,7 @@ var headsCount = 0;
       // Else:
       else {
         //  Increment losses by one.
-        const loser = ["You need to concentrate on not losing", "Don't beat yourself up too bad...", "I'm sure there are some things that you're probably good at."]
+        const loser = ["You need to concentrate on not losing", "Don't beat yourself up too bad...", "I'm sure there are some things that you're probably good at.", "Ugh", "Doh!"]
         const losing = Math.floor(Math.random() * Math.floor(loser.length))
         losses++
         //  Find the div with an id of win-lose. Update it with an h2 of "Loser!"
@@ -54,7 +54,7 @@ var headsCount = 0;
         $("#losses").html(losses);
       }
       gameCount++;
-      let headPercent = (randHead/gameCount) * 100 ;
+      let headPercent = randHead/gameCount * 100 ;
       let tailsPercent = randTail/gameCount * 100;
       $("#heads-percent").html(`${headPercent.toFixed(1)}%`);
       $("#tails-percent").html(`${tailsPercent.toFixed(1)}%`);
