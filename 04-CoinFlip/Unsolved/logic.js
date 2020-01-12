@@ -2,6 +2,7 @@ var headsCount = 0;
     var tailsCount = 0;
     var wins = 0;
     var losses = 0;
+    let gameCount = 0;
 
     function flipThatCoin(result) {
 
@@ -28,11 +29,14 @@ var headsCount = 0;
       //  STEP THREE:
       if (result === randNum) {
         // If result is equal to randomNumber, do the following:
-
+        const winner = ["Wow you are such a freaking winner!", "You totally won your ass off!", "Wintastic!", "Winford Brimly!"];
+        let winning = Math.floor(Math.random() * Math.floor(4));
+        console.log(winning);
+        console.log(winner[winning]);
         //  Increment wins by one.
         wins++;
         //  Find the div with an id of win-lose. Update it with an h2 of "Winner!"
-        $("#win-lose").html("<h2>Winner!<h2>");
+        $("#win-lose").html(`<h2>${winner[winning]}<h2>`);
         //  Find the div with an id of wins. Update it with the value of the wins variable.
         $("#wins").html(wins);
       }
