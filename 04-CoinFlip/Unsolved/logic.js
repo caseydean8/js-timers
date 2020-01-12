@@ -33,8 +33,8 @@ var headsCount = 0;
       //  STEP THREE:
       if (result === randNum) {
         // If result is equal to randomNumber, do the following:
-        const winner = ["Wow you are such a freaking winner!", "You totally won your ass off!", "Wintastic!", "Winford Brimly!"];
-        let winning = Math.floor(Math.random() * Math.floor(4));
+        const winner = ["Wow you are such a freaking winner!", "You totally won your ass off!", "Wintastic!", "Winford Brimly!", "Winning!"];
+        let winning = Math.floor(Math.random() * Math.floor(winner.length));
         //  Increment wins by one.
         wins++;
         //  Find the div with an id of win-lose. Update it with an h2 of "Winner!"
@@ -45,9 +45,11 @@ var headsCount = 0;
       // Else:
       else {
         //  Increment losses by one.
+        const loser = ["You need to concentrate on not losing", "Don't beat yourself up too bad...", "I'm sure there are some things that you're probably good at."]
+        const losing = Math.floor(Math.random() * Math.floor(loser.length))
         losses++
         //  Find the div with an id of win-lose. Update it with an h2 of "Loser!"
-        $("#win-lose").html("<h2>Loser!<h2>");
+        $("#win-lose").html(`<h2>${loser[losing]}<h2>`);
         //  Find the div with an id of losses. Update it with the value of the losses variable.
         $("#losses").html(losses);
       }
