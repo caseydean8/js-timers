@@ -17,7 +17,10 @@ var headsCount = 0;
       //  If randomNumber is equal to zero then:
       if (randNum === 0) {
         //  Find the div with an id of coin-image.
-        $("#coin-image").html("<img src='assets/kennedy-coin-head.png'>");
+        
+        $("#coin-image-heads").fadeIn();
+        
+        
         //  Replace its html with an img tag containing this image:
         //  http://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg
         randHead++;
@@ -27,7 +30,7 @@ var headsCount = 0;
         //  Find the div with an id of coin-image.
         //  Replace its html with an img tag containing this image:
         //  http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg
-        $("#coin-image").html("<img src='assets/kennedy-coin-tails.png'>");
+        $("#coin-image").html("<img class='opa' src='assets/kennedy-coin-tails.png'>");
         randTail++;
       }
       //  STEP THREE:
