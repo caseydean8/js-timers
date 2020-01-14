@@ -16,15 +16,13 @@ body {
 }
 
 button {
-  height: 30px;
-  width: 48.54px;
+  height: 50px;
+  width: 80.9px;
+  font-size: 20px;
+  border-radius: 48.15px;
   color: black;
 }
 
-/* .button {
-  width: 50%;
-  height: 48.54px;
-} */
 
 .container {
   display: grid;
