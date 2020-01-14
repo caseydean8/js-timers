@@ -56,7 +56,7 @@ button {
 #chose-heads {
   grid-area: 3 / 2 / 4 / 3;
 }
-#coin-image-heads {
+#coin-image-heads, #coin-image-tails {
   grid-area: 3 / 3 / 4 / 4;
   display: none;
 }

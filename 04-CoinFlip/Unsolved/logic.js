@@ -20,9 +20,6 @@ var headsCount = 0;
         
         $("#coin-image-heads").fadeIn();
         
-        
-        //  Replace its html with an img tag containing this image:
-        //  http://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg
         randHead++;
       } else {
         // Else:
@@ -30,7 +27,7 @@ var headsCount = 0;
         //  Find the div with an id of coin-image.
         //  Replace its html with an img tag containing this image:
         //  http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg
-        $("#coin-image").html("<img class='opa' src='assets/kennedy-coin-tails.png'>");
+        $("#coin-image-tails").fadeIn();
         randTail++;
       }
       //  STEP THREE:
