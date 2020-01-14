@@ -19,6 +19,7 @@ var headsCount = 0;
         //  Find the div with an id of coin-image.
         
         $("#coin-image-heads").fadeIn();
+        $("#coin-image-heads").fadeOut(3000);
         
         randHead++;
       } else {
@@ -28,6 +29,7 @@ var headsCount = 0;
         //  Replace its html with an img tag containing this image:
         //  http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg
         $("#coin-image-tails").fadeIn();
+        $("#coin-image-tails").fadeOut(3000);
         randTail++;
       }
       //  STEP THREE:
@@ -65,6 +67,7 @@ var headsCount = 0;
       headsCount++;
       $("#heads-chosen").text(headsCount);
       $("#guess").html("<b>Heads</b>");
+      // $("#coin-image-heads", "coin-image-tails").fadeOut();
       flipThatCoin(0);
     });
 
