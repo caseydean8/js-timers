@@ -28,12 +28,17 @@
 
     var intervalId;
 
+    let running = false;
+
     $("#stop").on("click", stop);
 
     $("#resume").on("click", run);
 
     function run() {
-      intervalId = setInterval(decrement, 1000);
+      if (running === false) {
+        intervalId = setInterval(decrement, 1000);
+      }
+      running = true;
     }
 
     function decrement() {
@@ -51,7 +56,7 @@
     }
 
     function stop() {
-
+      running = false;
       clearInterval(intervalId);
     }
 
