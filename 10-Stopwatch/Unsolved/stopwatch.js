@@ -22,21 +22,23 @@ function reset() {
   lap = 1;
 
   //  TODO: Change the "display" div to "00:00."
-
+  $("#display").text("00.00");
 }
 
 function start() {
 
   //  TODO: Use setInterval to start the count here and set the clock to running.
   if (!clockRunning) {
-
+    time = setInterval(count, 1000);
+    clockRunning = true;
   }
 
 }
 function stop() {
 
   //  TODO: Use clearInterval to stop the count here and set the clock to not be running.
-
+  clearInterval(time);
+  clockRunning = false;
 }
 
 function recordLap() {
@@ -51,12 +53,12 @@ function recordLap() {
 function count() {
 
   //  TODO: increment time by 1, remember we cant use "this" here.
-
+  time++
   //  TODO: Get the current time, pass that into the timeConverter function,
   //        and save the result in a variable.
-
+  let timeConverted = timeConverter(time);
   //  TODO: Use the variable you just created to show the converted time in the "display" div.
-
+  $("#display").text(timeConverted);
 }
 
 //  THIS FUNCTION IS DONE FOR US!
