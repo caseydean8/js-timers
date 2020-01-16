@@ -21,7 +21,7 @@ function reset() {
   lap = 1;
 
   //  TODO: Change the "display" div to "00:00."
-  $("#display").text("00.00");
+  $("#display").text("00:00");
 }
 
 function start() {
@@ -41,15 +41,18 @@ function stop() {
 function recordLap() {
   //  TODO: Get the current time, pass that into the timeConverter function,
   //        and save the result in a variable.
+  const lapTime = timeConverter(time);
   //  TODO: Add the current lap and time to the "laps" div.
+  $("#laps").text(`${lap}: ${lapTime}`)
   //  TODO: Increment lap by 1. Remember, we can't use "this" here.
+  lap++;
 }
 function count() {
   //  TODO: increment time by 1, remember we cant use "this" here.
   time++;
   //  TODO: Get the current time, pass that into the timeConverter function,
   //        and save the result in a variable.
-  let timeConverted = timeConverter(time);
+  const timeConverted = timeConverter(time);
   //  TODO: Use the variable you just created to show the converted time in the "display" div.
   $("#display").text(timeConverted);
 }
