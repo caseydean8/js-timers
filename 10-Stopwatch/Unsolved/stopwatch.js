@@ -43,7 +43,9 @@ function recordLap() {
   //        and save the result in a variable.
   const lapTime = timeConverter(time);
   //  TODO: Add the current lap and time to the "laps" div.
-  $("#laps").text(`${lap}: ${lapTime}`)
+  const lapDiv = $("<div>");
+  $(lapDiv).text(`${lap}: ${lapTime}`);
+  $("#laps").append(lapDiv);
   //  TODO: Increment lap by 1. Remember, we can't use "this" here.
   lap++;
 }
