@@ -30,7 +30,7 @@ function fileSort(arr) {
       // console.log(file[j]);
       if (file[j] === "." && file[j + 1] === "m" || file[j] === "." && file[j + 1] === "a") {
         video.push(file);
-      } else if (file[j] === "." && file[j + 1] === "j" || file[j] === "." && file[j + 1] === "g" || file[j] === "." && file[j + 1] === "p") {
+      } else if (file[j] === ".") {
         images.push(file);
       }
     }
