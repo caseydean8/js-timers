@@ -40,3 +40,5 @@ var biggestProfit = function(stockArray, sharesBought) {
     console.log("Error, you need at least 2 prices");
   }
 };
+
+console.log(biggestProfit(stockPrices, 1000))
