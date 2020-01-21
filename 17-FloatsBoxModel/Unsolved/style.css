@@ -7,23 +7,59 @@ h1 {
   color: white;
   text-align: center;
   background-color: navy;
+  padding: 20px;
+}
+
+p {
+  padding: 15px;
+}
+
+#after {
+  float: left;
+  /* position: absolute; */
 }
 
 #left {
-  float: left;
+  /* float: left; */
+  position: absolute;
+  /* flex: none; */
   width: 75%;
-  padding: 2%;
+  /* padding: 15px; */
   background-color: cornflowerblue;
 }
 
 #right {
   float: right;
+  /* width: inherit; */
+  position: absolute;
+  right: 0;
+  /* top: 0; */
   width: 25%;
-  padding: 2%;
+  /* padding: 15px; */
   background-color: #b20;
 }
 
 #text-wrapper {
   width: 1024px;
   background-color: antiquewhite;
+  margin: 0 auto;
+  /* height: auto; */
+  /* overflow: visible; */
+  position: relative;  
+  /* clear: both; */
+  /* padding: 15px; */
 }
+
+/* * Get the `#right` div next to the `#left` div.
+
+  * **BONUS:** Don't change any widths.
+
+* Get the Background color to extend past the two floated divs.
+
+* Make the `#right` div end where the #left div ends. Make it so you can scroll to see the text.
+
+* Make the `#after` div appear after the text boxes.
+
+* Center the `#text-wrapper`.
+
+* Make the space around the text with the navy background so it looks like the picture below. */
