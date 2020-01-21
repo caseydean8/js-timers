@@ -15,3 +15,14 @@
  *  Style it!
  *
  */
+console.log("app");
+
+$(
+  $("#add").on("click", function() {
+    console.log("clicked");
+    var toDo = $("#new-task").val();
+    console.log(toDo);
+    $("#tasks").val(toDo);
+    $("#new-task").val("");
+  })
+);
