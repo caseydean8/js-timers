@@ -7,35 +7,29 @@ h1 {
   color: white;
   text-align: center;
   background-color: navy;
-  padding: 20px;
+  padding: 42px;
 }
 
 p {
-  padding: 15px;
+  padding: 20px;
 }
 
 #after {
-  float: left;
-  /* position: absolute; */
+  clear: both;
 }
 
 #left {
-  /* float: left; */
-  position: absolute;
-  /* flex: none; */
+  float: left;
   width: 75%;
-  /* padding: 15px; */
   background-color: cornflowerblue;
+  margin-bottom: 32px;
 }
 
 #right {
   float: right;
-  /* width: inherit; */
-  position: absolute;
-  right: 0;
-  /* top: 0; */
   width: 25%;
-  /* padding: 15px; */
+  height: 712px;
+  overflow: auto;
   background-color: #b20;
 }
 
@@ -43,11 +37,7 @@ p {
   width: 1024px;
   background-color: antiquewhite;
   margin: 0 auto;
-  /* height: auto; */
-  /* overflow: visible; */
   position: relative;  
-  /* clear: both; */
-  /* padding: 15px; */
 }
 
 /* * Get the `#right` div next to the `#left` div.
