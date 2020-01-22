@@ -16,27 +16,29 @@
  *
  */
 console.log("app");
-$("#tasks").append("<ul id='task-list'>")
 
 // $(
 
   $("#add").on("click", function() {
-    // console.log("clicked");
-    var toDo = $("#new-task").val();
+    const toDo = $("#new-task").val();
+    const doneBtn = $("<button>").addClass("done");
+    $(doneBtn).val(toDo);
+    $(doneBtn).text("finished");
     console.log(toDo);
-    // $("#tasks").text(toDo);
-    $("#task-list").append("<li class='list-item'>");
+    $("#tasks").append(`<li class='list-item' value='${toDo}'>`);
     $(".list-item:last-child").text(toDo);
+    $("#done-button-holder").append(doneBtn);
     $("#new-task").val("");
   });
 
-  $(document).on("click", ".list-item", function() {
+  $(document).on("click", ".done", function() {
     console.log("clicked");
-    console.log(this.innerText);
+    console.log(this.value);
     $("#completed").append("<li class='completed-item'>");
-    $(".completed-item").text(this.innerText);
+    $(".completed-item:last-child").text(this.value);
+    $(".list-item").val(this.value).remove();
     $(this).remove();
   });
 
-  
+
 // );
