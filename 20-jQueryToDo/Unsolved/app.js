@@ -16,13 +16,22 @@
  *
  */
 console.log("app");
+$("#tasks").append("<ul id='task-list'>")
 
-$(
+// $(
+
   $("#add").on("click", function() {
-    console.log("clicked");
+    // console.log("clicked");
     var toDo = $("#new-task").val();
     console.log(toDo);
-    $("#tasks").val(toDo);
+    // $("#tasks").text(toDo);
+    $("#task-list").append("<li class='list-item'>");
+    $(".list-item:last-child").text(toDo);
     $("#new-task").val("");
   })
-);
+
+  $(document).on("click", ".list-item", function() {
+    console.log("clicked");
+    $(this).remove();
+  })
+// );
