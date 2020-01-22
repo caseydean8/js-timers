@@ -28,10 +28,15 @@ $("#tasks").append("<ul id='task-list'>")
     $("#task-list").append("<li class='list-item'>");
     $(".list-item:last-child").text(toDo);
     $("#new-task").val("");
-  })
+  });
 
   $(document).on("click", ".list-item", function() {
     console.log("clicked");
+    console.log(this.innerText);
+    $("#completed").append("<li class='completed-item'>");
+    $(".completed-item").text(this.innerText);
     $(this).remove();
-  })
+  });
+
+  
 // );
