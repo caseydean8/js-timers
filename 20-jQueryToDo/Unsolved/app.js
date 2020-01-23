@@ -18,8 +18,7 @@
 console.log("app");
 
 // $(
-
-  $("#add").on("click", function() {
+  const enterTodo= () => {
     const toDo = $("#new-task").val();
     const doneBtn = $("<button>").addClass("done");
     $(doneBtn).val(toDo);
@@ -29,7 +28,16 @@ console.log("app");
     $(".list-item:last-child").text(toDo);
     $("#done-button-holder").append(doneBtn);
     $("#new-task").val("");
-  });
+  }
+
+  $("#add").on("click", enterTodo);
+
+  const enterIt = document.getElementById("new-task");
+  enterIt.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      enterTodo();
+    }
+  })
 
   $(document).on("click", ".done", function() {
     console.log("clicked");
@@ -39,6 +47,3 @@ console.log("app");
     $(".list-item").val(this.value).remove();
     $(this).remove();
   });
-
-
-// );
