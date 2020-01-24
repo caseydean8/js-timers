@@ -1,6 +1,7 @@
 h1 {
   text-align: center;
   grid-area: 1 / 2 / 2 / 3;
+  font-family: 'Open Sans', sans-serif;
 }
 
 li, .done {
@@ -17,13 +18,12 @@ li, .done {
   margin: 0 auto;
   background-color: burlywood;
   padding: 2em;
-  /* margin-left: 10px; */
+  font-family: 'Raleway', sans-serif;
 }
+
 .done {
-  width: 100%;
-  /* grid-column-start: 3; */
-  /* grid-column-end: 4; */
-  /* display: flex; */
+  width: 80%;
+  border-radius: 1em;
   margin-bottom: 10px;
 }
 
@@ -51,27 +51,9 @@ li, .done {
 h2 {
   grid-area: 4 / 2 / 5 / 3;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #completed {
-  grid-area: 5 / 1 / 6 / 2;
-}
-
-.div1 {
-  grid-area: 1 / 2 / 2 / 3;
-}
-.div2 {
-  grid-area: 2 / 1 / 3 / 2;
-}
-.div3 {
-  grid-area: 2 / 3 / 3 / 4;
-}
-.div4 {
-  grid-area: 3 / 1 / 4 / 2;
-}
-.div5 {
-  grid-area: 4 / 2 / 5 / 3;
-}
-.div6 {
-  grid-area: 5 / 1 / 6 / 2;
+  grid-area: 5 / 1 / 6 / 3;
 }
