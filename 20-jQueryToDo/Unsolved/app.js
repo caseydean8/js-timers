@@ -22,15 +22,11 @@
   const enterTodo= () => {
     const toDo = $("#new-task").val();
     const doneBtn = $("<button>").addClass("done");
-    $(doneBtn).attr('id', toDo);
-    $(doneBtn).val(toDo);
-    $(doneBtn).text("finished");
-    console.log(toDo);
+    $(doneBtn).attr('id', toDo).text("finished");
     $("#tasks").append(`<li class='list-item' id='${toDo}'>`);
     $(".list-item:last-child").text(toDo);
     $("#done-button-holder").append(doneBtn);
     $("#new-task").val("");
-    deleteMark++;
   }
 
   $("#add").on("click", enterTodo);
@@ -44,8 +40,8 @@
 
   $(document).on("click", ".done", function() {
     $("#completed").append("<li class='completed-item'>");
-    $(".completed-item:last-child").text(this.value);
+    $(".completed-item:last-child").text(this.id);
     const deleteMe = document.getElementById(`${this.id}`);
     $(deleteMe).remove();
     $(this).remove();
-  });
+  })
