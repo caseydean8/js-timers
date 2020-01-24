@@ -15,19 +15,22 @@
  *  Style it!
  *
  */
-console.log("app");
 
 // $(
+  let deleteMark = 0;  
+
   const enterTodo= () => {
     const toDo = $("#new-task").val();
     const doneBtn = $("<button>").addClass("done");
+    $(doneBtn).attr('id', toDo);
     $(doneBtn).val(toDo);
     $(doneBtn).text("finished");
     console.log(toDo);
-    $("#tasks").append(`<li class='list-item' value='${toDo}'>`);
+    $("#tasks").append(`<li class='list-item' id='${toDo}'>`);
     $(".list-item:last-child").text(toDo);
     $("#done-button-holder").append(doneBtn);
     $("#new-task").val("");
+    deleteMark++;
   }
 
   $("#add").on("click", enterTodo);
@@ -40,10 +43,9 @@ console.log("app");
   })
 
   $(document).on("click", ".done", function() {
-    console.log("clicked");
-    console.log(this.value);
     $("#completed").append("<li class='completed-item'>");
     $(".completed-item:last-child").text(this.value);
-    $(".list-item").val(this.value).remove();
+    const deleteMe = document.getElementById(`${this.id}`);
+    $(deleteMe).remove();
     $(this).remove();
   });
