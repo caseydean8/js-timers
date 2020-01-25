@@ -95,3 +95,19 @@ li {
     margin: 2% 5% 1% 5%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #left,
+  #center,
+  #right {
+    height: 250px;
+    overflow: auto;
+  }
+
+  #image-div {
+    background-image: url("http://www.imfdb.org/images/thumb/1/1b/Porencima.jpg/601px-Porencima.jpg");
+    width: 601px;
+    height: 341px;
+    margin: 0 auto;
+  }
+}
