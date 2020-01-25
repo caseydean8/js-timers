@@ -60,34 +60,38 @@ li {
 }
 
 /********** ADD YOUR MEDIA QUERIES BELOW THIS LINE *************/
-@media only screen and (max-width:1024px) {
+@media only screen and (max-width: 1024px) {
   nav {
     text-align: center;
     padding: 0;
   }
 
   #menu {
-    display: inline-block;
-    /* margin-top: 75px; */
     width: 100%;
-    text-align: center;
-    /* float: none; */
-    /* clear: both; */
   }
 
   ul {
     text-align: center;
     background-color: maroon;
-    /* float:none; */
   }
 
   li {
-    /* text-align: center; */
     padding: 10px 62px;
-    /* width: 30%; */
   }
 
   #image-div {
     clear: both;
+    width: 100%;
+  }
+
+  #page-wrapper {
+    width: 100%;
+  }
+
+  #left,
+  #center,
+  #right {
+    width: 90%;
+    margin: 2% 5% 1% 5%;
   }
 }
