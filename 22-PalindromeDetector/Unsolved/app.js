@@ -31,7 +31,6 @@ const reverseIt = oldString => {
         if (string[i] !== " ") {
           console.log(string[i]);
           reverseString.unshift(string[i]);
-          // break;
         }
 
         if (string[i] === " ") {
@@ -61,7 +60,9 @@ const reverseIt = oldString => {
   //   let last = final[0].concat(final[i]);
   //   return last;
   // }
-  console.log(final);
+  console.log(final.join());
+  let last = final.join();
+  document.getElementById("result").innerHTML = last.replace(/,/g, "");
   // console.log(last);
   // reverseIt(newString);
   // console.log(cut);
@@ -70,7 +71,7 @@ const reverseIt = oldString => {
   // console.log(newString);
 };
 
-reverseIt("This is an example");
+// reverseIt("This is an example");
 
 const isPal = string => {
   let noPeriod = string
@@ -96,11 +97,11 @@ const isPal = string => {
     document.getElementById("result").innerHTML = noPeriod;
     console.log("true");
   } else {
-    console.log(false);
+    reverseIt(string);
   }
 };
 
-// isPal("Otto needs Xanax.");
+isPal("Otto needs Xanax.");
 // isPal("Was it a car or a cat I saw?");
 // Notes:
 // ======
