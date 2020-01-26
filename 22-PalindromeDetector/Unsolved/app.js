@@ -13,7 +13,6 @@
 // would become `siht si na elpmaxe.`
 
 // If the word is a palindrome, have it display in red.
-let palindrome = false;
 
 const reverseIt = (oldString, boolean) => {
   let final = [];
@@ -43,9 +42,7 @@ const reverseIt = (oldString, boolean) => {
       newString = string.slice(cut + 1, string.length);
       stringRecur(newString);
       final.unshift(reverseString);
-    } else {
-      console.log("finished");
-    }
+    } 
   };
   stringRecur(string);
   let last = final.join().replace(/,/g, "");
@@ -53,7 +50,6 @@ const reverseIt = (oldString, boolean) => {
 };
 
 const display = (string, boolean) => {
-  console.log(boolean);
   if (boolean) {
     document.getElementById("result").style.color = "red";
   }
@@ -84,6 +80,7 @@ const isPal = string => {
 // isPal("Otto needs Xanax.");
 isPal("Was it a car or a cat I saw?");
 // isPal("This is an example.")
+
 // Notes:
 // ======
 
