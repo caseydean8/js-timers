@@ -14,22 +14,21 @@
 
 // If the word is a palindrome, have it display in red.
 let final = [];
+let palindrome = false;
+
 const reverseIt = oldString => {
-  // console.log(string.length);
   let string = oldString + " ";
-  console.log(string);
-  console.log(string.length);
+  // console.log(string);
+  // console.log(string.length);
   const stringRecur = string => {
-    console.log(string);
+    // console.log(string);
     let cut = 0;
     let newString;
     let reverseString = [];
-    let fin;
     if (string.length > 0) {
       for (let i = 0; i < string.length; i++) {
-        
         if (string[i] !== " ") {
-          console.log(string[i]);
+          // console.log(string[i]);
           reverseString.unshift(string[i]);
         }
 
@@ -37,72 +36,70 @@ const reverseIt = oldString => {
           reverseString.push(" ");
           cut = i;
           break;
+
+        }
+        if (string[i] === "." || string[i] === "?" || string[i] === "!") {
+          reverseString.splice(string[i], 1);
+          reverseString.push(string[i]);
         }
       }
-      console.log(reverseString);
+      // console.log(reverseString);
       newString = string.slice(cut + 1, string.length);
       stringRecur(newString);
       final.unshift(reverseString);
-      // let stringer = JSON.stringify(final);
-      // console.log(stringer)
-      // let finalString = stringer.replace(/[.\/#!$%\^&\*;:{}=\-_`~()?"]/g, "");
-      // for (let i = 0; i < finalString.length; i++) {
-      //   console.log(finalString[i])
-      // }
-      // console.log(reverseString);
-      // console.log(finalString);
     } else {
       console.log("finished");
     }
   };
   stringRecur(string);
-  // for (let i = 1; i < final.length; i++) {
-  //   let last = final[0].concat(final[i]);
-  //   return last;
-  // }
   console.log(final.join());
-  let last = final.join();
-  document.getElementById("result").innerHTML = last.replace(/,/g, "");
-  // console.log(last);
-  // reverseIt(newString);
-  // console.log(cut);
-  // console.log(string);
-  // console.log(reverseString);
-  // console.log(newString);
+  let last = final.join().replace(/,/g, "");
+  display(last);
 };
 
-// reverseIt("This is an example");
+const display = (string) => {
+  console.log(palindrome);
+  if(palindrome) {
+    document.getElementById("result").style.color = "red";
+    document.getElementById("result").innerHTML = string;
+  }
+  document.getElementById("result").innerHTML = string;
+}
 
 const isPal = string => {
-  let noPeriod = string
+  // let noPeriod = string.replace(".", "");
+  let noSpace = string
     .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()? ]/g, "")
     .toLowerCase();
-  let half = noPeriod.length / 2;
+  let half = noSpace.length / 2;
   // console.log(half);
   let firstHalf = [];
   let secondHalf = [];
-  for (let i = 0; i < noPeriod.length; i++) {
+  for (let i = 0; i < noSpace.length; i++) {
     if (i < half) {
-      firstHalf.push(noPeriod[i]);
+      firstHalf.push(noSpace[i]);
     } else if (i >= half) {
-      secondHalf.unshift(noPeriod[i]);
+      secondHalf.unshift(noSpace[i]);
     }
   }
 
   firstHalf.length = parseInt(half);
-  console.log(firstHalf);
-  console.log(secondHalf);
-  console.log(JSON.stringify(firstHalf));
+  // console.log(firstHalf);
+  // console.log(secondHalf);
+  // console.log(JSON.stringify(firstHalf));
   if (JSON.stringify(firstHalf) === JSON.stringify(secondHalf)) {
-    document.getElementById("result").innerHTML = noPeriod;
     console.log("true");
+    palindrome = true;
+    reverseIt(string);
   } else {
     reverseIt(string);
+    console.log(false);
   }
 };
 
-isPal("Otto needs Xanax.");
-// isPal("Was it a car or a cat I saw?");
+// isPal("Otto needs Xanax.");
+isPal("Was it a car or a cat I saw?");
+// isPal("This is an example.")
 // Notes:
 // ======
 
