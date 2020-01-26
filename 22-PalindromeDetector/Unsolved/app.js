@@ -13,22 +13,18 @@
 // would become `siht si na elpmaxe.`
 
 // If the word is a palindrome, have it display in red.
-let final = [];
 let palindrome = false;
 
-const reverseIt = oldString => {
+const reverseIt = (oldString, boolean) => {
+  let final = [];
   let string = oldString + " ";
-  // console.log(string);
-  // console.log(string.length);
   const stringRecur = string => {
-    // console.log(string);
     let cut = 0;
     let newString;
     let reverseString = [];
     if (string.length > 0) {
       for (let i = 0; i < string.length; i++) {
         if (string[i] !== " ") {
-          // console.log(string[i]);
           reverseString.unshift(string[i]);
         }
 
@@ -36,14 +32,14 @@ const reverseIt = oldString => {
           reverseString.push(" ");
           cut = i;
           break;
-
         }
+
         if (string[i] === "." || string[i] === "?" || string[i] === "!") {
           reverseString.splice(string[i], 1);
           reverseString.push(string[i]);
         }
       }
-      // console.log(reverseString);
+
       newString = string.slice(cut + 1, string.length);
       stringRecur(newString);
       final.unshift(reverseString);
@@ -52,49 +48,37 @@ const reverseIt = oldString => {
     }
   };
   stringRecur(string);
-  console.log(final.join());
   let last = final.join().replace(/,/g, "");
-  display(last);
+  display(last, boolean);
 };
 
-const display = (string) => {
-  console.log(palindrome);
-  if(palindrome) {
+const display = (string, boolean) => {
+  console.log(boolean);
+  if (boolean) {
     document.getElementById("result").style.color = "red";
-    document.getElementById("result").innerHTML = string;
   }
   document.getElementById("result").innerHTML = string;
-}
+};
 
 const isPal = string => {
-  // let noPeriod = string.replace(".", "");
   let noSpace = string
     .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()? ]/g, "")
     .toLowerCase();
   let half = noSpace.length / 2;
-  // console.log(half);
   let firstHalf = [];
   let secondHalf = [];
+  let palindrome = false;
+
   for (let i = 0; i < noSpace.length; i++) {
-    if (i < half) {
-      firstHalf.push(noSpace[i]);
-    } else if (i >= half) {
-      secondHalf.unshift(noSpace[i]);
-    }
+    i < half ? firstHalf.push(noSpace[i]) : secondHalf.unshift(noSpace[i]);
   }
 
   firstHalf.length = parseInt(half);
-  // console.log(firstHalf);
-  // console.log(secondHalf);
-  // console.log(JSON.stringify(firstHalf));
+
   if (JSON.stringify(firstHalf) === JSON.stringify(secondHalf)) {
-    console.log("true");
     palindrome = true;
-    reverseIt(string);
-  } else {
-    reverseIt(string);
-    console.log(false);
   }
+  reverseIt(string, palindrome);
 };
 
 // isPal("Otto needs Xanax.");
