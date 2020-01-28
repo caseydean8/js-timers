@@ -13,6 +13,7 @@ var fibonacci = function(n) {
     answer.push(recursive(i));
 
   }
+  console.log(answer);
 
   // Returns the answer
   return answer;
@@ -32,3 +33,5 @@ var recursive = function(i) {
     return recursive(i - 1) + recursive(i - 2);
   }
 };
+
+fibonacci(12)
