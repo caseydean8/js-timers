@@ -61,3 +61,5 @@ function stringCalculator(string) {
     }
   }
 }
+
+console.log(stringCalculator("add 7 7"))
