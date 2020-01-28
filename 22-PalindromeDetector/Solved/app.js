@@ -65,4 +65,7 @@ function palindromeDetector(s) {
   document.getElementById("result").innerHTML = showOnPage.join(" ");
 }
 
-palindromeDetector(sentence1);
+// palindromeDetector(sentence1);
+palindromeDetector(sentence4);
+// palindromeDetector("Your Mom.");
+// Doesn't return punctuation

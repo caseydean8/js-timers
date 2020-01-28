@@ -7,14 +7,12 @@ const palCheck = string => {
 
   for (let i = 0; i < stringArr.length; i++) {
     stringArr[i] = " " + stringArr[i];
-    console.log(stringArr[i]);
     for (let j = stringArr[i].length - 1; j >= 0; j--) {
       if (
         stringArr[i][j] === "." ||
         stringArr[i][j] === "?" ||
         stringArr[i][j] === "!"
       ) {
-        console.log(stringArr[i]);
         punct = stringArr[i].slice(stringArr[i].length - 1);
         const regex = `${punct}`;
         stringArr[i] = stringArr[i].replace(regex, "");
@@ -41,6 +39,6 @@ const palCheck = string => {
     : reverseArr.join(" ");
 };
 
-palCheck("Your Mom");
+palCheck("Your Mom")
 // palCheck("Otto needs Xanax.");
 // palCheck("Was it a car or a cat I saw?");
