@@ -1,14 +1,14 @@
 const fibonacci = num => {
   let fibArr = [0];
-
+  let y;
   const startFib = x => {
-    if (num > 1) {
+    if (num >= 1) {
       num--;
       fibArr.push(x);
-      let y = fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2];
+      y = fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2];
       startFib(y);
-    } else {
-      console.log("finished");
+    } else if (num < 0){
+      console.log("please enter a positive integer")
     }
   };
 
@@ -16,4 +16,4 @@ const fibonacci = num => {
   console.log(fibArr);
 };
 
-fibonacci(11);
+fibonacci(12);
